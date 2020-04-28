@@ -1,0 +1,5 @@
+spring.application.name=orders
+server.port=8050
+
+opentracing.jaeger.udp-sender.host=http://35.222.40.241
+opentracing.jaeger.udp-sender.port=6831

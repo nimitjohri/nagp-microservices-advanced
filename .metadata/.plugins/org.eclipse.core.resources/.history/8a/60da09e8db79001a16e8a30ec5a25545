@@ -1,0 +1,35 @@
+package org.bestbuy.user.service.impl;
+
+import java.util.List;
+
+import org.bestbuy.user.entity.User;
+import org.bestbuy.user.exception.UserNotFoundException;
+import org.bestbuy.user.repository.UserRepository;
+import org.bestbuy.user.service.UserDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserDetailServiceImpl implements UserDetailService {
+
+	@Autowired
+	UserRepository userRepository;
+	
+	@Override
+	public List<User> getUsers() {
+		return userRepository.findAll();
+	}
+
+	@Override
+	public User getUserById(Integer userId) {
+		User user = new User();
+		user = userRepository.getOne(userId);
+
+		if (user != null) {
+			return user;
+		}
+		throw new UserNotFoundException(userId);
+	}
+	
+
+}

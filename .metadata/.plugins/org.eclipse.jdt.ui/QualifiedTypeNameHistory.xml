@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.domain.EntityScan"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="org.bestbuy.user.repository.UserRepository"/>
+<fullyQualifiedTypeName name="org.bestbuy.user.entity.User"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.bestbuy.user.models.UserDTO"/>
+<fullyQualifiedTypeName name="com.twitter.zipkin.thriftjava.Span"/>
+<fullyQualifiedTypeName name="io.jaegertracing.thriftjava.Span"/>
+<fullyQualifiedTypeName name="io.opentracing.Span"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="io.opentracing.Tracer"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="io.jaegertracing.Configuration"/>
+<fullyQualifiedTypeName name="io.opentracing.contrib.java.spring.jaeger.starter.JaegerConfigurationProperties.HttpSender"/>
+<fullyQualifiedTypeName name="io.jaegertracing.Configuration.SenderConfiguration"/>
+</qualifiedTypeNameHistroy>

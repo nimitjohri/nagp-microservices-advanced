@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="spring.application.name=userss"/>
+		<list key="findhistory">
+			<item value="spring.application.name=userss"/>
+			<item value="#opentracing.jaeger.udp-sender.host=http://35.222.40.241:80"/>
+			<item value="opentracing.jaeger.udp-sender.port=6831"/>
+		</list>
+	</section>
+</section>

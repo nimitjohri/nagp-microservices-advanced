@@ -1,0 +1,34 @@
+package org.bestbuy.user;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import io.jaegertracing.Configuration;
+import io.jaegertracing.internal.JaegerTracer;
+import io.jaegertracing.spi.Sender;
+import io.opentracing.contrib.java.spring.jaeger.starter.JaegerConfigurationProperties.HttpSender;
+
+
+@SpringBootApplication
+public class UserApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserApplication.class, args);
+	}
+	
+	@Bean
+	public static JaegerTracer getTracer() {
+		Configuration.SamplerConfiguration samplerConfig = 
+				Configuration.SamplerConfiguration.fromEnv().withType("const").withParam(1);
+		Configuration.SenderConfiguration senderConfig =
+				Configuration.SenderConfiguration.fromEnv().withAgentHost("http://35.184.65.149:14268/api/traces")
+				.withEndpoint("http://35.193.101.11:80");
+
+		Configuration.ReporterConfiguration reporterConfig =
+				Configuration.ReporterConfiguration.fromEnv().withLogSpans(true).withSender(senderConfig);
+		Configuration config = new Configuration("user-tutorial").withSampler(samplerConfig)
+		.withReporter(reporterConfig);
+	    return config.getTracer();
+	}
+}

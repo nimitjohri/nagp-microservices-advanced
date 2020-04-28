@@ -1,0 +1,24 @@
+package org.bestbuy.user;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import io.jaegertracing.thriftjava.Span;
+
+
+@SpringBootApplication
+public class UserApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserApplication.class, args);
+	}
+	
+	@Bean
+	public io.opentracing.Tracer zipkinTracer() {
+	    OkHttpSender okHttpSender = OkHttpSender.create("http://${ZIPKIN_API_URL}:9411/api/v1/spans");
+	    AsyncReporter<Span> reporter = AsyncReporter.builder(okHttpSender).build();
+	    Tracing braveTracer = Tracing.newBuilder().localServiceName("spring-boot").reporter(reporter).build();
+	    return BraveTracer.create(braveTracer);
+	}
+}

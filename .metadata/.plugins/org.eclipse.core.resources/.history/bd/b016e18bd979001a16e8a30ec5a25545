@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package org.bestbuy.user.repository;
+
+/**
+ * @author nimitjohri
+ *
+ */
+public class UserRepository {
+
+}

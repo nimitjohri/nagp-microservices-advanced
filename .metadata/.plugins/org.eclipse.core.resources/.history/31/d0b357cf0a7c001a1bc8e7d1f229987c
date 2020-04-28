@@ -1,0 +1,11 @@
+spring.datasource.url=jdbc:mysql://${MY_SQL_URL}:3306/${DB_NAME}
+spring.datasource.username=${MYSQL_USER_NAME}
+spring.datasource.password=${MYSQL_USER_PASSWORD}
+
+spring.application.name=users
+server.port=8060
+
+
+opentracing.jaeger.udp-sender.host=${JAEGER_QUERY_API_URL}
+opentracing.jaeger.http-sender.url=${JAEGER_COLLECTOR_API_URL}:14268/api/traces
+#opentracing.jaeger.udp-sender.port=6831

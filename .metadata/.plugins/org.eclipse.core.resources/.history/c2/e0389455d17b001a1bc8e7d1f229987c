@@ -1,0 +1,7 @@
+spring.application.name=aggregator
+server.port=8090
+spring.mvc.throw-exception-if-no-handler-found=true
+spring.resources.add-mappings=false
+
+opentracing.jaeger.udp-sender.host=localhost
+opentracing.jaeger.udp-sender.port=6831
